@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Learning — RPLSol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-sm">RP</span>
+        </div>
+        <span class="font-bold text-xl text-gray-900">RPLSol</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <li><a href="index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="learn.html" class="nav-active hover:text-blue-600 transition-colors">Online Learning</a></li>
+        <li><a href="lms.html" class="hover:text-blue-600 transition-colors">LMS</a></li>
+      </ul>
+      <a href="lms.html" class="hidden md:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+        Take a Test
+      </a>
+      <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-sm font-medium text-gray-700">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="learn.html" class="block hover:text-blue-600">Online Learning</a>
+      <a href="lms.html" class="block hover:text-blue-600">LMS</a>
+      <a href="lms.html" class="block text-blue-600 font-semibold">Take a Test</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero-gradient text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-white/20 text-white text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5">Learn at Your Own Pace</span>
+      <h1 class="text-5xl font-extrabold mb-5">Online Learning Hub</h1>
+      <p class="text-blue-100 text-lg max-w-2xl mx-auto">
+        Explore our library of video lessons across all subjects. Watch, rewatch, and master — on your schedule.
+      </p>
+    </div>
+  </section>
+
+  <!-- Subject filter tabs -->
+  <section class="py-8 px-6 bg-gray-50 border-b border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-wrap gap-3">
+      <button onclick="filterSubject('all')" id="tab-all" class="tab-btn active-tab px-5 py-2 rounded-full text-sm font-semibold bg-blue-600 text-white transition-all">All Subjects</button>
+      <button onclick="filterSubject('mathematics')" id="tab-mathematics" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Mathematics</button>
+      <button onclick="filterSubject('science')" id="tab-science" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Science</button>
+      <button onclick="filterSubject('english')" id="tab-english" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">English</button>
+      <button onclick="filterSubject('history')" id="tab-history" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">History</button>
+      <button onclick="filterSubject('geography')" id="tab-geography" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Geography</button>
+    </div>
+  </section>
+
+  <!-- Video Grid -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div id="video-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Mathematics -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="mathematics">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_1')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Introduction to Algebra</h3>
+            <p class="text-gray-500 text-sm">Learn the fundamentals of algebraic expressions, variables, and equations.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 8–10</span>
+              <span>&bull;</span>
+              <span>~20 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="mathematics">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_2')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Geometry Basics</h3>
+            <p class="text-gray-500 text-sm">Shapes, angles, and the properties of 2D and 3D figures explained clearly.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 7–9</span>
+              <span>&bull;</span>
+              <span>~18 min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Science -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="science">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_3')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Science</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">The Cell — Building Block of Life</h3>
+            <p class="text-gray-500 text-sm">An in-depth look at cell structure, organelles, and their functions.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 8–10</span>
+              <span>&bull;</span>
+              <span>~25 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="science">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_4')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Science</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Newton's Laws of Motion</h3>
+            <p class="text-gray-500 text-sm">Understanding force, inertia, and acceleration with real-world examples.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 9–11</span>
+              <span>&bull;</span>
+              <span>~22 min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="english">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_5')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">English</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Essay Writing Masterclass</h3>
+            <p class="text-gray-500 text-sm">Structure your arguments and write compelling essays with confidence.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 9–12</span>
+              <span>&bull;</span>
+              <span>~30 min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- History -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="history">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_6')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">History</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">World War II — Causes & Impact</h3>
+            <p class="text-gray-500 text-sm">A comprehensive overview of the events leading to WWII and its global consequences.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 10–12</span>
+              <span>&bull;</span>
+              <span>~35 min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Geography -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="geography">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_7')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Geography</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Climate Zones of the World</h3>
+            <p class="text-gray-500 text-sm">Explore the major climate zones and how they shape ecosystems and human settlement.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 8–10</span>
+              <span>&bull;</span>
+              <span>~20 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="geography">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_8')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Geography</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Rivers & Their Landforms</h3>
+            <p class="text-gray-500 text-sm">How rivers shape the land — erosion, deposition, and the features they create.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 7–9</span>
+              <span>&bull;</span>
+              <span>~17 min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- English 2 -->
+        <div class="video-card rounded-2xl overflow-hidden shadow-sm card-hover bg-white border border-gray-100" data-subject="english">
+          <div class="video-placeholder flex items-center justify-center cursor-pointer group" onclick="playVideo(this, 'PLACEHOLDER_URL_9')">
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <p class="text-white/80 text-xs">Click to play</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">English</span>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1">Grammar Deep Dive</h3>
+            <p class="text-gray-500 text-sm">Tenses, clauses, and punctuation — everything you need for flawless writing.</p>
+            <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
+              <span>Grade 7–10</span>
+              <span>&bull;</span>
+              <span>~28 min</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No results message -->
+      <div id="no-results" class="hidden text-center py-20 text-gray-400">
+        <svg class="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-lg font-medium">No videos in this subject yet</p>
+        <p class="text-sm mt-1">Check back soon — more content is on the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to test what you've learned?</h2>
+      <p class="text-gray-500 text-lg mb-8">Head over to the LMS and take a subject test — get your results instantly.</p>
+      <a href="lms.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-xl transition-colors text-lg">
+        Go to LMS
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xs">RP</span>
+          </div>
+          <span class="text-white font-bold text-lg">RPLSol</span>
+        </div>
+        <p class="text-sm leading-relaxed">Committed to delivering quality education and digital learning tools to every student.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="learn.html" class="hover:text-white transition-colors">Online Learning</a></li>
+          <li><a href="lms.html" class="hover:text-white transition-colors">LMS / Tests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li>123 Academy Road, Springfield</li>
+          <li>info@rplsol.edu</li>
+          <li>+1 (555) 000-1234</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-sm text-center">
+      &copy; 2026 RPLSol. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Video modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4">
+    <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden">
+      <button onclick="closeModal()" class="absolute top-3 right-3 z-10 w-9 h-9 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div style="aspect-ratio:16/9;">
+        <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Subject filter
+    function filterSubject(subject) {
+      const cards = document.querySelectorAll('.video-card');
+      const tabs = document.querySelectorAll('.tab-btn');
+      let visible = 0;
+
+      tabs.forEach(t => {
+        t.classList.remove('bg-blue-600', 'text-white');
+        t.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      });
+
+      const activeTab = document.getElementById('tab-' + subject);
+      activeTab.classList.add('bg-blue-600', 'text-white');
+      activeTab.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+
+      cards.forEach(card => {
+        if (subject === 'all' || card.dataset.subject === subject) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+    }
+
+    // Video modal — replace PLACEHOLDER_URL_N with actual YouTube embed URLs when ready
+    function playVideo(el, url) {
+      if (url.startsWith('PLACEHOLDER')) {
+        alert('Video coming soon! The link for this lesson has not been added yet.');
+        return;
+      }
+      document.getElementById('modal-iframe').src = url;
+      const modal = document.getElementById('video-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('modal-iframe').src = '';
+      const modal = document.getElementById('video-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('video-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>

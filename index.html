@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPLSol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-sm">RP</span>
+        </div>
+        <span class="font-bold text-xl text-gray-900">RPLSol</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <li><a href="index.html" class="nav-active hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="learn.html" class="hover:text-blue-600 transition-colors">Online Learning</a></li>
+        <li><a href="lms.html" class="hover:text-blue-600 transition-colors">LMS</a></li>
+      </ul>
+      <a href="lms.html" class="hidden md:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+        Take a Test
+      </a>
+      <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-sm font-medium text-gray-700">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="learn.html" class="block hover:text-blue-600">Online Learning</a>
+      <a href="lms.html" class="block hover:text-blue-600">LMS</a>
+      <a href="lms.html" class="block text-blue-600 font-semibold">Take a Test</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-gradient text-white py-28 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-white/20 text-white text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">Welcome to RPLSol</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+        Empowering Minds,<br/>Shaping Futures
+      </h1>
+      <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+        A modern learning environment where students thrive through quality education, digital resources, and personalized assessment.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="learn.html" class="bg-white text-blue-700 font-semibold px-8 py-3.5 rounded-lg hover:bg-blue-50 transition-colors">
+          Start Learning
+        </a>
+        <a href="lms.html" class="border border-white/50 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors">
+          Take a Test
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything Students Need</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">From video lessons to instant test results — all in one place.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.882v6.236a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Lessons</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Access curated video content across all subjects, available anytime and on any device.</p>
+          <a href="learn.html" class="inline-block mt-5 text-blue-600 text-sm font-semibold hover:underline">Browse lessons →</a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Tests</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Take subject tests online and receive your results instantly — no waiting, no paperwork.</p>
+          <a href="lms.html" class="inline-block mt-5 text-green-600 text-sm font-semibold hover:underline">Take a test →</a>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm card-hover">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Dedicated Faculty</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Our experienced teachers design and manage assessments to keep every student on track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Who We Are -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Who We Are</span>
+        <h2 class="text-4xl font-bold text-gray-900 mt-3 mb-6 leading-snug">Dedicated to Education</h2>
+        <p class="text-gray-500 text-lg leading-relaxed mb-5">
+          RPLSol was founded with a single vision: to make quality education accessible to every student, regardless of background. We have grown into a respected institution known for academic excellence.
+        </p>
+        <p class="text-gray-500 text-lg leading-relaxed">
+          Today, we combine traditional teaching values with modern digital tools — giving students every advantage they need to succeed in an ever-changing world.
+        </p>
+      </div>
+      <!-- Core Values -->
+      <div class="grid grid-cols-1 gap-6">
+        <div class="bg-blue-50 rounded-2xl p-6 flex items-start gap-4 card-hover">
+          <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-1">Innovation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We embrace technology and new methods to deliver education that is relevant, engaging, and effective.</p>
+          </div>
+        </div>
+        <div class="bg-green-50 rounded-2xl p-6 flex items-start gap-4 card-hover">
+          <div class="w-11 h-11 bg-green-100 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-1">Inclusivity</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Every student deserves equal opportunity. We foster a welcoming environment where all learners can thrive.</p>
+          </div>
+        </div>
+        <div class="bg-purple-50 rounded-2xl p-6 flex items-start gap-4 card-hover">
+          <div class="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-1">Excellence</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">We hold ourselves and our students to the highest standards — in academic achievement and in character.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto bg-blue-600 rounded-3xl p-12 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Ready to test your knowledge?</h2>
+      <p class="text-blue-100 mb-8 text-lg">Jump into our online assessment platform and see where you stand.</p>
+      <a href="lms.html" class="inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg">
+        Go to LMS
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xs">RP</span>
+          </div>
+          <span class="text-white font-bold text-lg">RPLSol</span>
+        </div>
+        <p class="text-sm leading-relaxed">Committed to delivering quality education and digital learning tools to every student.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="learn.html" class="hover:text-white transition-colors">Online Learning</a></li>
+          <li><a href="lms.html" class="hover:text-white transition-colors">LMS / Tests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li>123 Academy Road, Springfield</li>
+          <li>info@rplsol.edu</li>
+          <li>+1 (555) 000-1234</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-sm text-center">
+      &copy; 2026 RPLSol. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>

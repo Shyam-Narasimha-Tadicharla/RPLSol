@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMS — RPLSol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-sm">RP</span>
+        </div>
+        <span class="font-bold text-xl text-gray-900">RPLSol</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <li><a href="index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="learn.html" class="hover:text-blue-600 transition-colors">Online Learning</a></li>
+        <li><a href="lms.html" class="nav-active hover:text-blue-600 transition-colors">LMS</a></li>
+      </ul>
+      <a href="lms.html" class="hidden md:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+        Take a Test
+      </a>
+      <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-sm font-medium text-gray-700">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="learn.html" class="block hover:text-blue-600">Online Learning</a>
+      <a href="lms.html" class="block hover:text-blue-600">LMS</a>
+    </div>
+  </nav>
+
+  <!-- LMS Landing — shown by default -->
+  <div id="lms-landing">
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-white/20 text-white text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5">Assessment Portal</span>
+        <h1 class="text-5xl font-extrabold mb-5">Learning Management System</h1>
+        <p class="text-blue-100 text-lg max-w-2xl mx-auto">
+          Take your subject tests online and receive instant results. No printing, no waiting — just log in and go.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main cards -->
+    <section class="py-20 px-6">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+
+        <!-- Student Card -->
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-10 card-hover flex flex-col">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">I'm a Student</h2>
+          <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-1">
+            Take your assigned tests, see your results immediately after submission, and track your performance across subjects.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Instant results after submission
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Multiple subjects available
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              No account needed to begin
+            </li>
+          </ul>
+          <button onclick="openTestPortal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Take a Test
+          </button>
+        </div>
+
+        <!-- Teacher Card -->
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-10 card-hover flex flex-col">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">I'm a Teacher</h2>
+          <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-1">
+            Log in to your teacher dashboard to create and manage tests, review student submissions, and monitor class performance.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-purple-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Create and edit tests
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-purple-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              View student results
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-purple-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Monitor class performance
+            </li>
+          </ul>
+          <button onclick="openTeacherPortalDirect()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+            </svg>
+            Teacher Login
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-16 px-6 bg-white border-t border-gray-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
+          <p class="text-gray-500 mt-2">Three simple steps for students</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 text-white text-xl font-bold">1</div>
+            <h3 class="font-semibold text-gray-900 text-lg mb-2">Click "Take a Test"</h3>
+            <p class="text-gray-500 text-sm">Select the subject and test assigned by your teacher from the list.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 text-white text-xl font-bold">2</div>
+            <h3 class="font-semibold text-gray-900 text-lg mb-2">Answer the Questions</h3>
+            <p class="text-gray-500 text-sm">Work through the questions at your own pace within the time limit.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 text-white text-xl font-bold">3</div>
+            <h3 class="font-semibold text-gray-900 text-lg mb-2">Get Your Results</h3>
+            <p class="text-gray-500 text-sm">Submit and see your score instantly — no waiting required.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Embedded Test Portal — hidden until student clicks "Take a Test" -->
+  <div id="test-portal" class="hidden">
+    <div class="bg-blue-600 text-white px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button onclick="closeLMSView()" class="flex items-center gap-2 text-blue-200 hover:text-white text-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to LMS
+        </button>
+        <span class="text-white/40">|</span>
+        <span class="text-sm font-semibold">Student Test Portal — RPLSol</span>
+      </div>
+    </div>
+    <iframe
+      id="student-iframe"
+      class="lms-iframe"
+      src="about:blank"
+      title="Student Test Portal"
+    ></iframe>
+  </div>
+
+  <!-- Embedded Teacher Dashboard — hidden until teacher clicks Teacher Login -->
+  <div id="teacher-portal" class="hidden">
+    <div class="bg-purple-700 text-white px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button onclick="closeTeacherPortal()" class="flex items-center gap-2 text-purple-200 hover:text-white text-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back to LMS
+        </button>
+        <span class="text-white/40">|</span>
+        <span class="text-sm font-semibold">Teacher Dashboard — RPLSol</span>
+      </div>
+      <button onclick="closeTeacherPortal()" class="text-purple-200 hover:text-white text-sm transition-colors">Sign Out</button>
+    </div>
+    <iframe
+      id="teacher-iframe"
+      class="lms-iframe"
+      src="about:blank"
+      title="Teacher Dashboard"
+    ></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6" id="page-footer">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xs">RP</span>
+          </div>
+          <span class="text-white font-bold text-lg">RPLSol</span>
+        </div>
+        <p class="text-sm leading-relaxed">Committed to delivering quality education and digital learning tools to every student.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="learn.html" class="hover:text-white transition-colors">Online Learning</a></li>
+          <li><a href="lms.html" class="hover:text-white transition-colors">LMS / Tests</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li>123 Academy Road, Springfield</li>
+          <li>info@rplsol.edu</li>
+          <li>+1 (555) 000-1234</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-sm text-center">
+      &copy; 2026 RPLSol. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // ── Student test flow ──────────────────────────────────────────────────────
+    function openTestPortal() {
+      // Replace the src below with your actual test platform embed URL
+      // e.g. "https://yourplatform.com/embed?school=school_abc123"
+      const STUDENT_EMBED_URL = 'https://quizapp-dun-six.vercel.app/take';
+
+      document.getElementById('student-iframe').src = STUDENT_EMBED_URL;
+      document.getElementById('lms-landing').classList.add('hidden');
+      document.getElementById('test-portal').classList.remove('hidden');
+      document.getElementById('page-footer').classList.add('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function closeLMSView() {
+      document.getElementById('student-iframe').src = 'about:blank';
+      document.getElementById('test-portal').classList.add('hidden');
+      document.getElementById('lms-landing').classList.remove('hidden');
+      document.getElementById('page-footer').classList.remove('hidden');
+    }
+
+    // ── Teacher flow ───────────────────────────────────────────────────────────
+    function openTeacherPortalDirect() {
+      document.getElementById('teacher-iframe').src = 'https://quizapp-dun-six.vercel.app/';
+      document.getElementById('lms-landing').classList.add('hidden');
+      document.getElementById('teacher-portal').classList.remove('hidden');
+      document.getElementById('page-footer').classList.add('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function closeTeacherPortal() {
+      document.getElementById('teacher-iframe').src = 'about:blank';
+      document.getElementById('teacher-portal').classList.add('hidden');
+      document.getElementById('lms-landing').classList.remove('hidden');
+      document.getElementById('page-footer').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
