@@ -18,11 +18,11 @@
         <span class="font-bold text-xl text-gray-900">Xamai</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        <li><a href="index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-        <li><a href="learn.html" class="nav-active hover:text-blue-600 transition-colors">Online Learning</a></li>
-        <li><a href="lms.html" class="hover:text-blue-600 transition-colors">LMS</a></li>
+        <li><a href="index.html" class="hover:text-gray-900 transition-colors">Home</a></li>
+        <li><a href="learn.html" class="nav-active hover:text-gray-900 transition-colors">Online Learning</a></li>
+        <li><a href="lms.html" class="hover:text-gray-900 transition-colors">LMS</a></li>
       </ul>
-      <a href="lms.html" class="hidden md:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+      <a href="lms.html" class="hidden md:inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
         Take a Test
       </a>
       <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
@@ -32,10 +32,10 @@
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-3 text-sm font-medium text-gray-700">
-      <a href="index.html" class="block hover:text-blue-600">Home</a>
-      <a href="learn.html" class="block hover:text-blue-600">Online Learning</a>
-      <a href="lms.html" class="block hover:text-blue-600">LMS</a>
-      <a href="lms.html" class="block text-blue-600 font-semibold">Take a Test</a>
+      <a href="index.html" class="block hover:text-gray-900">Home</a>
+      <a href="learn.html" class="block hover:text-gray-900">Online Learning</a>
+      <a href="lms.html" class="block hover:text-gray-900">LMS</a>
+      <a href="lms.html" class="block text-gray-900 font-semibold">Take a Test</a>
     </div>
   </nav>
 
@@ -53,12 +53,12 @@
   <!-- Subject filter tabs -->
   <section class="py-8 px-6 bg-gray-50 border-b border-gray-200">
     <div class="max-w-6xl mx-auto flex flex-wrap gap-3">
-      <button onclick="filterSubject('all')" id="tab-all" class="tab-btn active-tab px-5 py-2 rounded-full text-sm font-semibold bg-blue-600 text-white transition-all">All Subjects</button>
-      <button onclick="filterSubject('mathematics')" id="tab-mathematics" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Mathematics</button>
-      <button onclick="filterSubject('science')" id="tab-science" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Science</button>
-      <button onclick="filterSubject('english')" id="tab-english" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">English</button>
-      <button onclick="filterSubject('history')" id="tab-history" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">History</button>
-      <button onclick="filterSubject('geography')" id="tab-geography" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-all">Geography</button>
+      <button onclick="filterSubject('all')" id="tab-all" class="tab-btn active-tab px-5 py-2 rounded-full text-sm font-semibold bg-gray-900 text-white transition-all">All Subjects</button>
+      <button onclick="filterSubject('mathematics')" id="tab-mathematics" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition-all">Mathematics</button>
+      <button onclick="filterSubject('science')" id="tab-science" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition-all">Science</button>
+      <button onclick="filterSubject('english')" id="tab-english" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition-all">English</button>
+      <button onclick="filterSubject('history')" id="tab-history" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition-all">History</button>
+      <button onclick="filterSubject('geography')" id="tab-geography" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition-all">Geography</button>
     </div>
   </section>
 
@@ -78,7 +78,7 @@
             </div>
           </div>
           <div class="p-5">
-            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
+            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
             <h3 class="font-semibold text-gray-900 text-lg mb-1">Introduction to Algebra</h3>
             <p class="text-gray-500 text-sm">Learn the fundamentals of algebraic expressions, variables, and equations.</p>
             <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
@@ -99,7 +99,7 @@
             </div>
           </div>
           <div class="p-5">
-            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
+            <span class="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Mathematics</span>
             <h3 class="font-semibold text-gray-900 text-lg mb-1">Geometry Basics</h3>
             <p class="text-gray-500 text-sm">Shapes, angles, and the properties of 2D and 3D figures explained clearly.</p>
             <div class="flex items-center gap-3 mt-4 text-xs text-gray-400">
@@ -280,7 +280,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to test what you've learned?</h2>
       <p class="text-gray-500 text-lg mb-8">Head over to the LMS and take a subject test — get your results instantly.</p>
-      <a href="lms.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-xl transition-colors text-lg">
+      <a href="lms.html" class="inline-block bg-gray-900 hover:bg-black text-white font-bold px-10 py-4 rounded-xl transition-colors text-lg">
         Go to LMS
       </a>
     </div>
@@ -344,12 +344,12 @@
       let visible = 0;
 
       tabs.forEach(t => {
-        t.classList.remove('bg-blue-600', 'text-white');
+        t.classList.remove('bg-gray-900', 'text-white');
         t.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
       });
 
       const activeTab = document.getElementById('tab-' + subject);
-      activeTab.classList.add('bg-blue-600', 'text-white');
+      activeTab.classList.add('bg-gray-900', 'text-white');
       activeTab.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
 
       cards.forEach(card => {

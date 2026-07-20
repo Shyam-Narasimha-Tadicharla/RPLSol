@@ -11,13 +11,13 @@ html {
 
 /* Active nav link indicator */
 .nav-active {
-  color: #2563eb;
+  color: #111827;
   font-weight: 600;
 }
 
 /* Hero gradient */
 .hero-gradient {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
 }
 
 /* Card hover lift */
@@ -48,5 +48,5 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, transparent 70%);
 }
