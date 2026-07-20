@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400">
+  <rect width="320" height="400" fill="white"/>
+
+  <!-- Left arm: top-left flare, curves inward to center pinch, flares out bottom-left -->
+  <path d="
+    M 60 10
+    C 60 10 110 20 130 30
+    C 155 80 158 130 161 165
+    C 158 175 155 185 130 220
+    C 110 240 75 310 60 390
+    L 95 390
+    C 95 390 125 310 145 240
+    C 165 195 168 180 170 165
+    C 172 150 175 135 195 90
+    C 215 45 240 20 260 10
+    L 220 10
+    C 220 10 195 30 178 70
+    C 172 85 168 110 165 145
+    C 162 120 158 90 148 60
+    C 138 35 110 10 95 10
+    Z
+  " fill="black"/>
+
+  <!-- Right arm: top-right flare, curves inward to center pinch, flares out bottom-right -->
+  <path d="
+    M 260 10
+    C 260 10 210 20 190 30
+    C 165 80 162 130 159 165
+    C 162 175 165 185 190 220
+    C 210 240 245 310 260 390
+    L 225 390
+    C 225 390 195 310 175 240
+    C 155 195 152 180 150 165
+    C 148 150 145 135 125 90
+    C 105 45 80 20 60 10
+    L 100 10
+    C 100 10 125 30 142 70
+    C 148 85 152 110 155 145
+    C 158 120 162 90 172 60
+    C 182 35 210 10 225 10
+    Z
+  " fill="black"/>
+</svg>
