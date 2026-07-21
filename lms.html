@@ -171,9 +171,11 @@
     </div>
     <iframe
       id="student-iframe"
-      class="lms-iframe"
       src="about:blank"
       title="Student Test Portal"
+      style="width:100%;height:90vh;border:0"
+      allow="clipboard-write"
+      referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>
   </div>
 
@@ -194,9 +196,11 @@
     </div>
     <iframe
       id="teacher-iframe"
-      class="lms-iframe"
       src="about:blank"
       title="Teacher Dashboard"
+      style="width:100%;height:90vh;border:0"
+      allow="clipboard-write"
+      referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>
   </div>
 
@@ -244,7 +248,7 @@
     function openTestPortal() {
       // Replace the src below with your actual test platform embed URL
       // e.g. "https://yourplatform.com/embed?school=school_abc123"
-      const STUDENT_EMBED_URL = 'https://quizapp-dun-six.vercel.app/take';
+      const STUDENT_EMBED_URL = 'https://lms.xamai.in/take';
 
       document.getElementById('student-iframe').src = STUDENT_EMBED_URL;
       document.getElementById('lms-landing').classList.add('hidden');
@@ -262,7 +266,7 @@
 
     // ── Teacher flow ───────────────────────────────────────────────────────────
     function openTeacherPortalDirect() {
-      document.getElementById('teacher-iframe').src = 'https://quizapp-dun-six.vercel.app/';
+      document.getElementById('teacher-iframe').src = 'https://lms.xamai.in/';
       document.getElementById('lms-landing').classList.add('hidden');
       document.getElementById('teacher-portal').classList.remove('hidden');
       document.getElementById('page-footer').classList.add('hidden');
