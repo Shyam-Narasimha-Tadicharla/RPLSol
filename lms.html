@@ -197,7 +197,7 @@
         <span class="text-white/40">|</span>
         <span class="text-sm font-semibold">Teacher Dashboard - Xamai</span>
       </div>
-      <button onclick="closeTeacherPortal()" class="text-gray-400 hover:text-white text-sm transition-colors">Sign Out</button>
+      <button onclick="signOutTeacher()" class="text-gray-400 hover:text-white text-sm transition-colors">Sign Out</button>
     </div>
     <iframe
       id="teacher-iframe"
@@ -278,11 +278,33 @@
       window.scrollTo(0, 0);
     }
 
+    // "Back to LMS": just close the view (the teacher stays signed in).
     function closeTeacherPortal() {
       document.getElementById('teacher-iframe').src = 'about:blank';
       document.getElementById('teacher-portal').classList.add('hidden');
       document.getElementById('lms-landing').classList.remove('hidden');
       document.getElementById('page-footer').classList.remove('hidden');
+    }
+
+    // "Sign Out": ask the dashboard (lms.xamai.in) to end the session, then
+    // close the view. Blanking the frame alone left the teacher signed in for
+    // up to 7 days. Closes anyway after 3 s so the button never hangs.
+    function signOutTeacher() {
+      const frame = document.getElementById('teacher-iframe');
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        window.removeEventListener('message', onReply);
+        closeTeacherPortal();
+      };
+      const onReply = (e) => {
+        if (e.origin === 'https://lms.xamai.in' && e.data && e.data.type === 'xamai:signed-out') finish();
+      };
+      window.addEventListener('message', onReply);
+      setTimeout(finish, 3000);
+      try { frame.contentWindow.postMessage({ type: 'xamai:sign-out' }, 'https://lms.xamai.in'); }
+      catch (e) { finish(); }
     }
   </script>
 </body>
